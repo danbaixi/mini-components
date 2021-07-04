@@ -1,0 +1,25 @@
+<view class="slider-catpcha-wrap {{popup ? 'popup' : ''}}" wx:if="{{show}}">
+  <view class="mask" wx:if="{{popup && show}}" bindtap="close"></view>
+  <view class="slider-catpcha" style="width:{{ width }}px">
+    <view bindtap="init" class="image {{!fail ? 'success' : ''}}"
+      style="height:{{ height }}px;background-image:url({{ image }})">
+      <view class="mark"
+        style="width:{{ catpchaWidth }}px; height:{{ catpchaWidth }}px; top:{{ maskTop }}px; left:{{ maskLeft }}px">
+      </view>
+      <view class="catpcha-box {{!moving && fail ? 'fail' : ''}}"
+        style="-webkit-clip-path: inset({{ clipPath }});left: {{ -(maskLeft - controlLeft) }}px"></view>
+    </view>
+
+    <view class="slider-wrap" style="height:{{ controlWidth }}px">
+      <view class="slider"
+        style="width:{{ width }}px;height: {{ sliderHeight }}px;margin:{{ (controlWidth - sliderHeight) / 2 + 10}}px 0">
+        <text class="tips" hidden="{{moving}}">{{ tips }}</text>
+        <view class="{{moving ? 'control-moved' : 'control'}} {{!moving && fail ? 'fail' : ''}}"
+          style="left: {{ controlLeft }}px;transform: translateX({{(catpchaWidth - controlWidth) / 2}}px) translateY(-50%);width:{{controlWidth}}px;height:{{controlWidth}}px;"
+          bindtouchstart="startHandle" bindtouchmove="moveHandle" bindtouchend="endHandle">
+          <view class="control-icon"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

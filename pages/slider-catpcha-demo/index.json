@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "slider-catpcha": "/components/slider-catpcha/index"
+  },
+  "navigationBarTitleText": "滑块验证码",
+  "disableScroll": true
+}

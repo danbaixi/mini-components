@@ -1,0 +1,74 @@
+<view class="container">
+  <slider-catpcha
+    popup="{{popup}}"
+    show="{{show}}"
+    id="catpcha"
+    images="{{images}}"
+    width="{{width}}"
+    height="{{height}}"
+    catpchaWidth="{{catpchaWidth}}"
+    catpchaLeft="{{catpchaLeft}}"
+    controlWidth="{{controlWidth}}"
+    sliderHeight="{{sliderHeight}}"
+    bind:success="successHandle"
+    bind:fail="failHandle"
+    bind:close="closeHandle"
+    bind:start="startHandle"
+    bind:moved="movedHandle"
+    bind:end="endHandle"
+  ></slider-catpcha>
+  <view class="form" wx:if="{{popup}}">
+    <button type="primary" bindtap="show">显示验证码</button>
+  </view>
+  <view class="params">
+    <view class="item">
+      <view class="label">弹窗模式</view>
+      <view class="value">
+        <switch bindchange="switch" checked="{{popup}}"></switch>
+        <button class="reset-btn" type="primary" size="mini" bindtap="reset">重置参数</button>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">是否显示</view>
+      <view class="value">
+        <switch bindchange="switchShow" checked="{{show}}"></switch>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">高度</view>
+      <view class="value">
+        <slider bindchange="changeValue" data-name="height" min="100" max="500" step="10" show-value value="{{ height }}"></slider>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">宽度</view>
+      <view class="value">
+        <slider bindchange="changeValue" data-name="width" min="200" max="{{winWdith - 20}}" step="10" show-value value="{{ width }}"></slider>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">验证码大小</view>
+      <view class="value">
+        <slider bindchange="changeValue" data-name="catpchaWidth" min="40" max="80" show-value value="{{ catpchaWidth }}"></slider>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">左间距</view>
+      <view class="value">
+        <slider bindchange="changeValue" data-name="catpchaLeft" min="5" max="40" show-value value="{{ catpchaLeft }}"></slider>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">控件大小</view>
+      <view class="value">
+        <slider bindchange="changeValue" data-name="controlWidth" min="40" max="80" show-value value="{{ controlWidth }}"></slider>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">滑轨高度</view>
+      <view class="value">
+        <slider bindchange="changeValue" data-name="sliderHeight" min="20" max="80" show-value value="{{ sliderHeight }}"></slider>
+      </view>
+    </view>
+  </view>
+</view>

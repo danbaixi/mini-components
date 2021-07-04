@@ -1,0 +1,22 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "滑块验证码",
+          "pathName": "pages/slider-catpcha-demo/index",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="list">
+    <view bindtap="nav" data-url="/pages/slider-catpcha-demo/index" class="item" style="background-image:url('https://p26-tt.byteimg.com/origin/pgc-image/6edb12996f514a6d8c3ddc97e1d630c9.png')">
+      <view class="title">仿B站滑块验证码</view>
+    </view>
+  </view>
+  <view bindtap="copy" class="github">Github: https://github.com/danbaixi</view>
+</view>
